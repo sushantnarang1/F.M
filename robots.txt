@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://copestoneophir108.com/sitemap.xml

@@ -1,0 +1,14 @@
+.env
+.env.*
+.env.local
+.env.production.local
+credentials.json
+service-account.json
+*.pem
+*.key
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/

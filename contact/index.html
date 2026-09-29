@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#171816">
+    <meta name="description" content="Contact Copestone-Ophir Lodge No. 108 about Freemasonry, visits, community partnerships, events, and local history.">
+    <meta property="og:title" content="Contact the Lodge | Copestone-Ophir No. 108"><meta property="og:url" content="https://copestoneophir108.com/contact/">
+    <link rel="canonical" href="https://copestoneophir108.com/contact/"><link rel="stylesheet" href="/styles.css">
+    <title>Contact the Lodge | Copestone-Ophir Lodge No. 108</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Copestone-Ophir Lodge home"><span class="wordmark-seal" aria-hidden="true">C<span>·</span>O</span><span class="wordmark-name">Copestone-Ophir <small>Lodge No. 108 · Kearny, New Jersey</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="/#lodge">Our Lodge</a><a href="/history/">Our History</a><a href="/events/">Events</a><a href="/gallery/">Gallery</a><a class="nav-contact" href="/contact/" aria-current="page">Contact <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="main" class="contact-page">
+      <section class="contact-page-hero section-pad">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> A conversation begins here</p>
+        <h1>Contact Copestone-Ophir <em>Lodge</em></h1>
+        <p>Whether you're interested in Freemasonry, researching local history, or representing a community organization, we'd be glad to hear from you.</p>
+      </section>
+      <section class="inquiry-section section-pad">
+        <div class="inquiry-intro">
+          <p class="section-label"><span>GET IN TOUCH</span></p>
+          <h2>How are you<br>contacting <em>us?</em></h2>
+          <p>Choose the option that best fits your inquiry. Lodge officers will use your information only to respond to your message.</p>
+          <div class="direct-contact"><span>Prefer email?</span><a href="mailto:lodge108secretary@gmail.com">lodge108secretary@gmail.com ↗</a><a href="tel:+12019944853">(201) 994-4853</a></div>
+        </div>
+        <div class="inquiry-form-wrap">
+          <fieldset class="inquiry-type">
+            <legend>How are you contacting us?</legend>
+            <label><input type="radio" name="contactingAs" value="individual" checked><span>I'm an individual</span></label>
+            <label><input type="radio" name="contactingAs" value="organization"><span>I represent an organization</span></label>
+          </fieldset>
+          <p class="form-intro" id="form-intro">Have a question about Freemasonry, our Lodge, or our history? We'd be glad to hear from you.</p>
+          <form id="inquiry-form" novalidate>
+            <input type="hidden" name="inquiryType" id="inquiry-type-value" value="individual">
+            <input type="hidden" name="relatedEvent" id="related-event" value="">
+            <div class="field-grid">
+              <div class="field individual-only" data-field="name"><label for="name">Full name <span>*</span></label><input id="name" name="name" autocomplete="name" maxlength="120" required></div>
+              <div class="field organization-only" data-field="organization" hidden><label for="organization">Organization name <span>*</span></label><input id="organization" name="organization" autocomplete="organization" maxlength="160"></div>
+              <div class="field organization-only" data-field="contactPerson" hidden><label for="contact-person">Contact person <span>*</span></label><input id="contact-person" name="contactPerson" autocomplete="name" maxlength="120"></div>
+              <div class="field"><label for="email">Email <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+              <div class="field"><label for="phone">Phone <span class="optional">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+              <div class="field organization-only" data-field="organizationType" hidden><label for="organization-type">Organization type <span class="optional">(optional)</span></label><input id="organization-type" name="organizationType" maxlength="100"></div>
+              <div class="field"><label for="reason">Reason for contact <span>*</span></label><select id="reason" name="reason" required><option value="">Choose a reason</option><option>Interested in Freemasonry</option><option>Visiting the Lodge</option><option>Lodge History / Historical Research</option><option>Events</option><option>Community Involvement</option><option>Historical Photograph or Document</option><option>Other</option></select></div>
+              <div class="field organization-only" data-field="organizationReason" hidden><label for="organization-reason">Reason for inquiry <span>*</span></label><select id="organization-reason" name="organizationReason"><option value="">Choose a reason</option><option>Community Partnership</option><option>Event Collaboration</option><option>Venue / Lodge Inquiry</option><option>Historical Research</option><option>Media / Press</option><option>Charitable or Civic Initiative</option><option>Masonic Organization</option><option>Other</option></select></div>
+              <div class="field field-wide"><label for="message">Message <span>*</span></label><textarea id="message" name="message" rows="5" maxlength="5000" required></textarea></div>
+            </div>
+            <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="turnstile-slot" id="turnstile-slot"></div>
+            <p class="historical-help" id="historical-help" hidden>This form does not accept file uploads. To share a photograph or document, please <a href="mailto:lodge108secretary@gmail.com">contact the Lodge Secretary</a> to arrange a private submission.</p>
+            <p class="privacy-note">Your information will be used by Copestone-Ophir Lodge only to respond to this inquiry. It is not displayed publicly. Historical material is not published without Lodge review and approval.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <button class="button button-light submit-button" type="submit" id="submit-button">Send inquiry <span aria-hidden="true">↗</span></button>
+            <noscript><p class="form-error">JavaScript is required to submit this form. Please email <a href="mailto:lodge108secretary@gmail.com">the Lodge Secretary</a> instead.</p></noscript>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="footer-mark" href="/"><span class="wordmark-seal" aria-hidden="true">C<span>·</span>O</span><span>Copestone-Ophir Lodge No. 108</span></a><p>Free & Accepted Masons · Kearny, New Jersey</p><a href="#main" class="back-top">Back to top ↑</a><span class="footer-year">225 Kearny Avenue</span></footer>
+    <script src="/site-config.js"></script><script src="/script.js" defer></script>
+  </body>
+</html>

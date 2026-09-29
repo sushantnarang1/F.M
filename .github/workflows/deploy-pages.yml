@@ -1,0 +1,63 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Synchronize public calendar
+        env:
+          PUBLIC_CALENDAR_ID: ${{ vars.PUBLIC_CALENDAR_ID }}
+          GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+        run: |
+          if [[ -z "$PUBLIC_CALENDAR_ID" || -z "$GOOGLE_CALENDAR_API_KEY" ]]; then
+            echo "Public calendar is not configured; deploying with the empty event feed." >> "$GITHUB_STEP_SUMMARY"
+          else
+            python scripts/sync_public_calendar.py
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Assemble public static site
+        run: |
+          mkdir -p _site/assets _site/data
+          cp index.html styles.css script.js site-config.js robots.txt sitemap.xml CNAME _site/
+          cp assets/lodge-artwork.jpg assets/lodge-emblem.jpg assets/lodge-members.jpg \
+            assets/gemini-masonic-illustration.jpg assets/lodge-emblem-screenshot.jpg \
+            assets/grand-lodge-new-jersey-seal.jpg assets/eighth-masonic-district.png _site/assets/
+          cp data/events.json _site/data/
+          cp -R history events gallery contact thank-you _site/
+
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publish website
+        uses: actions/deploy-pages@v4
